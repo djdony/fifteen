@@ -32,6 +32,7 @@
 <script>
 import Notification from '~/components/Notification'
 export default {
+  middleware: 'auth',
   components: {
     Notification,
   },
@@ -45,7 +46,6 @@ export default {
   },
   methods: {
     async game() {
-      console.log(this.form)
       try {
         let res = await this.$axios.$post('/game', {
           gamestring: this.form.gamestring

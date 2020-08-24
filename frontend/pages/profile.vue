@@ -5,11 +5,11 @@
       <div class="content">
         <p>
           <strong>Username:</strong>
-          {{ loggedInUser.username }}
+          {{ this.$auth.user.username }}
         </p>
         <p>
           <strong>Email:</strong>
-          {{ loggedInUser.email }}
+          {{ this.$auth.user.email }}
         </p>
       </div>
     </div>
@@ -17,11 +17,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 export default {
   middleware: ['auth'],
-  computed: {
-    ...mapGetters(['loggedInUser'])
-  }
 }
 </script>
